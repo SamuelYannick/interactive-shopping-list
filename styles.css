@@ -1,0 +1,171 @@
+:root {
+    --background: #1e1f26;
+    --primary-color: #2c2d38;
+    --secondary-color: #4a4d57;
+    --accent-color: #00ffc4;
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--background);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    max-width: 500px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 0; 
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#itemInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    background: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    caret-color: var(--accent-color);
+}
+
+#itemInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+#addButton {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--background);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#addButton:hover {
+    background-color: #00d3a6;
+}
+
+.clear-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.clear-btn:hover {
+    background-color: #FF0033;
+}
+
+.delete-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-button svg {
+    transition: 200ms ease;
+}
+
+.delete-button:hover svg {
+    fill: #FF0033;
+}
+
+
+#shoppingList {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+#shoppingList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 2px solid var(--secondary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#shoppingList li.purchased {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: line-through;
+}
+
+.shopping-list button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.shopping-list button:hover {
+    color: #ff0033;
+}
+
+.shopping-list svg {
+    height: 20px;
+    width: 20px;
+    fill: var(--text-color);
+}
+
+.shopping-list li.purchased svg {
+    fill: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .wrapper {
+        padding: 15px;
+    }
+}
